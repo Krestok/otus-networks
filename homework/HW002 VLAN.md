@@ -421,7 +421,7 @@ Trace complete.
 
 
 
-[Конфигурация Роутера R1](https://github.com/Krestok/otus-networks/homework/lab4.2.8/configR1)
+[Конфигурация Роутера R1](homework/lab4.2.8/configR1)
 
 [Конфигурация Свитча S1](https://github.com/Krestok/otus-networks/homework/lab4.2.8/configS1)
 
