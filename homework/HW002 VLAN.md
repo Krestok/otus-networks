@@ -421,10 +421,10 @@ Trace complete.
 
 
 
-[Конфигурация Роутера R1](homework/lab 4.2.8/config R1)
+[Конфигурация Роутера R1](https://github.com/Krestok/otus-networks/homework/lab4.2.8/configR1)
 
-[Конфигурация Свитча S1](homework/lab 4.2.8/config S1)
+[Конфигурация Свитча S1](https://github.com/Krestok/otus-networks/homework/lab4.2.8/configS1)
 
-[Конфигурация Свитча S2](homework/lab 4.2.8/config S2)
+[Конфигурация Свитча S2](https://github.com/Krestok/otus-networks/homework/lab4.2.8/configS2)
 
-[Схема в Packet Tracer](homework/lab 4.2.8/lab 4.2.8.pkt)
+[Схема в Packet Tracer](https://github.com/Krestok/otus-networks/homework/lab4.2.8/lab4.2.8.pkt)
