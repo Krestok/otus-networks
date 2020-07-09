@@ -422,4 +422,4 @@ Trace complete.
 
 [Конфигурации](https://github.com/Krestok//otus-networks//tree/master/homework/lab4.2.8/)
 
-[Схема в Packet Tracer](https://github.com/Krestok/otus-networks/homework/lab4.2.8/lab4.2.8.pkt)
+[Схема в Packet Tracer](https://github.com/Krestok//otus-networks//tree/master/homework/lab4.2.8/)
