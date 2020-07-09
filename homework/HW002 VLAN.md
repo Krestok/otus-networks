@@ -254,3 +254,177 @@ b.	Configure the management interface and default gateway on each switch using t
 **S2(config-if)#ip address 192.168.3.11 255.255.255.0**
 
 **S2(config-if)#no shutdown**
+
+### Step 4 : Configure an 802.1Q Trunk Between the Switches
+
+Конфигурируем порты F0/1и F0/5 коммутатора S1 и порт F0/1 коммутатора S2 в TRUNK порты
+
+**S1(config)#interface fa0/1**
+
+**S1(config-if)#switchport mode trunk**
+
+**S1(config-if)#switchport trunk native vlan 8**  (Устанавливаем Native VLAN 8 на обоих коммутаторах)
+
+**S1(config-if)#switchport trunk allowed vlan 3,4,8** (Разрешаем передачу данных по trunk порту vlan 3,4,8)
+
+
+
+### Step 5: Configure Inter-VLAN Routing on the Router
+
+a.   Активируем интерфейс  G0/0/1 на маршрутизаторе R1.
+
+**R1(config)#interface g0/0/1**
+
+**R1(config-if)#no shutdown**
+
+b. Создаем субинтерфейсы G0/0/1.3, G0/0/1.4, G0/0/1.8
+
+**R1(config)#interface GigabitEthernet0/0/1.3**
+
+**R1(config-subif)#description Default Gateway for Vlan 3**
+
+**R1(config-subif)#encapsulation dot1Q 3**
+
+**R1(config-subif)#ip address 192.168.3.1 255.255.255.0**
+
+**R1(config-subif)#no shutdown**
+
+**!**
+
+**R1(config)#interface GigabitEthernet0/0/1.4**
+
+**R1(config-subif)#description Default Gateway for Vlan 4**
+
+**R1(config-subif)#encapsulation dot1Q 4**
+
+**R1(config-subif)#ip address 192.168.4.1 255.255.255.0**
+
+**R1(config-subif)#no shutdown**
+
+**!**
+
+**R1(config)#interface GigabitEthernet0/0/1.8**
+
+**R1(config-subif)#no shutdown**
+
+
+
+Complete the following tests from PC-A. All should be successful
+
+##### a.   Ping from PC-A to its default gateway.
+
+C:\>ping 192.168.3.1
+
+
+
+Pinging 192.168.3.1 with 32 bytes of data:
+
+
+
+Reply from 192.168.3.1: bytes=32 time=31ms TTL=255
+
+Reply from 192.168.3.1: bytes=32 time<1ms TTL=255
+
+Reply from 192.168.3.1: bytes=32 time<1ms TTL=255
+
+Reply from 192.168.3.1: bytes=32 time<1ms TTL=255
+
+
+
+Ping statistics for 192.168.3.1:
+
+​    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+
+Approximate round trip times in milli-seconds:
+
+​    Minimum = 0ms, Maximum = 31ms, Average = 7ms
+
+
+
+##### b.   Ping from PC-A to PC-B
+
+C:\>ping 192.168.4.3
+
+
+
+Pinging 192.168.4.3 with 32 bytes of data:
+
+
+
+Request timed out.
+
+Reply from 192.168.4.3: bytes=32 time<1ms TTL=127
+
+Reply from 192.168.4.3: bytes=32 time<1ms TTL=127
+
+Reply from 192.168.4.3: bytes=32 time<1ms TTL=127
+
+
+
+Ping statistics for 192.168.4.3:
+
+​    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+
+Approximate round trip times in milli-seconds:
+
+​    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+
+
+##### c.   Ping from PC-A to S2
+
+C:\>ping 192.168.3.12
+
+
+
+Pinging 192.168.3.12 with 32 bytes of data:
+
+
+
+Request timed out.
+
+Reply from 192.168.3.12: bytes=32 time=1ms TTL=255
+
+Reply from 192.168.3.12: bytes=32 time=1ms TTL=255
+
+Reply from 192.168.3.12: bytes=32 time<1ms TTL=255
+
+
+
+Ping statistics for 192.168.3.12:
+
+​    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+
+Approximate round trip times in milli-seconds:
+
+​    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+
+
+##### From the command prompt on PC-B, issue the tracert command to the address of PC-A.
+
+C:\>tracert 192.168.3.3
+
+
+
+Tracing route to 192.168.3.3 over a maximum of 30 hops: 
+
+
+
+  1   0 ms      0 ms      0 ms      192.168.4.1
+
+  2   0 ms      0 ms      0 ms      192.168.3.3
+
+
+
+Trace complete.
+
+
+
+[Конфигурация Роутера R1](homework/lab 4.2.8/config R1)
+
+[Конфигурация Свитча S1](homework/lab 4.2.8/config S1)
+
+[Конфигурация Свитча S2](homework/lab 4.2.8/config S2)
+
+[Схема в Packet Tracer](homework/lab 4.2.8/lab 4.2.8.pkt)
