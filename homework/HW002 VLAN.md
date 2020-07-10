@@ -305,6 +305,8 @@ b. Создаем субинтерфейсы G0/0/1.3, G0/0/1.4, G0/0/1.8
 
 **R1(config)#interface GigabitEthernet0/0/1.8**
 
+**R1(config-subif)#encapsulation dot1Q 8 native**
+
 **R1(config-subif)#no shutdown**
 
 
