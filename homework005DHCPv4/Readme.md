@@ -32,7 +32,7 @@
 | 999  | Parking_Lot | S1: F0/0, F0/2     |
 | 1000 | Native      | N/A                |
 
-[Конфигурации](/Config)
+[Конфигурации](https://github.com/Krestok/otus-networks/tree/master/homework005DHCPv4/Config)
 
 #### Часть 1: Establish an addressing scheme
 
