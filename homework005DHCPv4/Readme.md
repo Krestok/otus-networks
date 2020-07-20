@@ -32,6 +32,8 @@
 | 999  | Parking_Lot | S1: F0/0, F0/2     |
 | 1000 | Native      | N/A                |
 
+[Конфигурации](/Config)
+
 #### Часть 1: Establish an addressing scheme
 
 Subnet the network 192.168.1.0/24 to meet the following requirements:
