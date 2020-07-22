@@ -21,7 +21,7 @@
 | PC-A   | NIC            | DHCP                   |
 | PC-B   | NIC            | DHCP                   |
 
-
+[Конфигурации](https://github.com/Krestok/otus-networks/tree/master/homework005DHCPv6/Config)
 
 #### Step 1: Configure interfaces and routing for both routers.
 
