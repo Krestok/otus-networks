@@ -58,7 +58,7 @@ R2(config)#ipv6 route ::/0 2001:db8:ACAD:2::1
 
 c.   Verify routing is working by pinging R2’s G0/0/1 address from R1
 
-![](1.png)
+![1.png](1.png)
 
 d.   Save the running configuration to the startup configuration file.
 
@@ -70,9 +70,9 @@ Power PC-A up and ensure that the NIC is configured for IPv6 automatic configura
 
 After a few moments, the results of the command **ipconfig** should show that PC-A has assigned itself an address from the 2001:db8:1::/64 network.
 
-![](2.png)
+![2.png](2.png)
 
-![](3.png)
+![3.png](3.png)
 
 
 
@@ -112,11 +112,11 @@ d.   Restart PC-A.
 
 e.   Examine the output of **ipconfig /all** and notice the changes.
 
-![](4.png)
+![4.png](4.png)
 
 f.   Test connectivity by pinging R2’s G0/0/1 interface IP address.
 
-![](5.png)
+![5.png](5.png)
 
 
 
@@ -144,7 +144,7 @@ R1(config-if)# ipv6 dhcp server R2-STATEFUL
 
 **Power on PC-B and examine the SLAAC address that it generates.**
 
-![](6.png)
+![6.png](6.png)
 
 in the output that the prefix used is 2001:db8:acad:3::
 
@@ -170,8 +170,8 @@ a.   Restart PC-B.
 
 a.   Open a command prompt on PC-B and issue the command **ipconfig /all** and examine the output to see the results of the DHCPv6 relay operation.
 
-![](8.png)
+![8.png](8.png)
 
 b.   Test connectivity by pinging R1’s G0/0/1 interface IP address.
 
-![](7.png)
+![7.png](7.png)
